@@ -57,7 +57,7 @@ app.use(cors());
 }
 */
 
-app.get('/',(req,res) => {res.send(db.users);})
+app.get('/',(req,res) => {res.send("working");})
 app.post('/Signin', (req,res) => {signin.HandleSignin(req,res,db,bcrypt)});
 app.post('/Register',register.handleRegister(db,bcrypt));
 app.get('/profile/:id',profile.getProfile(db));
