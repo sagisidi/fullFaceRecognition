@@ -68,4 +68,6 @@ app.post('/imageUrl', (req,res) => {image.handleApiCall(req,res)});
 
 
 
-app.listen(PORT)
+app.listen(PORT || 3002, ()=>{
+	console.log(`listen to port ${PORT}`)
+})
