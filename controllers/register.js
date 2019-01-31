@@ -22,12 +22,13 @@ handleRegister = (db,bcrypt) => (req,res) =>{
 			.then(user => {
 					res.json(user[0]);
 			})
+			.catch(err=>  {console.log(err);res.status(404).json('Unable to Register 1')})
 
 		})
 		.then(trx.commit)
 		.catch(trx.rollback)
 	})
-	.catch(err => res.status(404).json('Unable to Register') );
+	.catch(err => {console.log(err);res.status(404).json('Unable to Register') });
 }
 
 module.exports ={
